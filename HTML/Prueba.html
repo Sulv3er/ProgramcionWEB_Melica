@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Cambiar Color de Fondo</title>
+    <link rel="stylesheet" href="../CSS/Prueba.css"> <!-- Enlace al archivo CSS externo -->
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -20,7 +21,9 @@
 <body>
     <h1>Haz clic para cambiar el color del fondo</h1>
     <button onclick="cambiarColor()">Cambiar Color</button>
+    <button onclick="crearFigura()">Crear Figura</button> <!-- Botón que genera figuras -->
 
+    <script src="../JS/Prueba.js"></script>
     <script>
         function cambiarColor() {
             const colores = ['#FF5733', '#33FF57', '#3357FF', '#F3FF33', '#FF33F3'];
