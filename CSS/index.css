@@ -32,21 +32,25 @@ header {
     font-weight: bold;
     font-size: 1.5rem;
     color: #2ecc71;
-    margin-right: 2rem; /* Espacio adicional después del logo */
+    margin-right: 2rem;
 }
 
 .nav-links {
     display: flex;
     list-style: none;
-    flex-grow: 1; /* Ocupa el espacio disponible */
+    flex-grow: 1;
+    align-items: center;
 }
 
-.nav-links li:not(:last-child) {
-    margin-right: 1.5rem; /* Espacio entre items, excepto el último */
+.nav-links li:not(:last-child):not(.right-items) {
+    margin-right: 1.5rem;
 }
 
-.nav-links li:last-child {
-    margin-left: auto; /* Empuja el ícono de usuario a la derecha */
+.nav-links .right-items {
+    margin-left: auto;
+    display: flex;
+    gap: 1rem;
+    align-items: center;
 }
 
 .nav-links a {
@@ -60,10 +64,26 @@ header {
     color: #2ecc71;
 }
 
-.user-icon {
-    font-size: 1.2rem;
+.login-btn {
+    color: white !important;
+    padding: 0.5rem 0 !important;
+    transition: color 0.3s;
 }
 
+.login-btn:hover {
+    color: #2ecc71 !important;
+}
+
+.user-icon {
+    font-size: 1.2rem;
+    transition: color 0.3s;
+}
+
+.user-icon:hover {
+    color: #2ecc71;
+}
+
+/* El resto de tu CSS permanece EXACTAMENTE igual */
 main {
     flex: 1;
     padding: 2rem;
@@ -162,7 +182,13 @@ footer {
     }
     
     .nav-links li {
-        margin: 0.5rem 0 !important; /* Important para sobrescribir los otros márgenes */
+        margin: 0.5rem 0 !important;
+    }
+
+    .nav-links .right-items {
+        margin-left: 0;
+        flex-direction: column;
+        width: 100%;
     }
 
     .welcome-section, .second-section {

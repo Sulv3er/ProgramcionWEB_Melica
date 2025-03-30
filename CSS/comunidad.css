@@ -39,14 +39,18 @@ header {
     display: flex;
     list-style: none;
     flex-grow: 1;
+    align-items: center;
 }
 
-.nav-links li:not(:last-child) {
+.nav-links li:not(:last-child):not(.right-items) {
     margin-right: 1.5rem;
 }
 
-.nav-links li:last-child {
+.nav-links .right-items {
     margin-left: auto;
+    display: flex;
+    gap: 1rem;
+    align-items: center;
 }
 
 .nav-links a {
@@ -60,8 +64,23 @@ header {
     color: #2ecc71;
 }
 
+.login-btn {
+    color: white !important;
+    padding: 0.5rem 0 !important;
+    transition: color 0.3s;
+}
+
+.login-btn:hover {
+    color: #2ecc71 !important;
+}
+
 .user-icon {
     font-size: 1.2rem;
+    transition: color 0.3s;
+}
+
+.user-icon:hover {
+    color: #2ecc71;
 }
 
 main {
@@ -128,5 +147,11 @@ footer {
     
     .nav-links li {
         margin: 0.5rem 0 !important;
+    }
+
+    .nav-links .right-items {
+        margin-left: 0;
+        flex-direction: column;
+        width: 100%;
     }
 }
