@@ -1,21 +1,15 @@
 <?php
-require_once "../model/model.php"; // Asegúrate de que la ruta sea correcta
+require_once "../model/model.php";
 
 session_start();
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    // Validar campos vacíos
-    if (empty($_POST['email']) || empty($_POST['password'])) {
-        header("Location: login.html?error=vacio");
-        exit();
-    }
-
     $correo = trim($_POST["email"]);
-    $contrasena = trim($_POST["password"]);
+    $contraseña = trim($_POST["password"]);
 
     try {
         // Buscar usuario en la base de datos
-        $sql = "SELECT id, nombre, correo, contrasena FROM registro WHERE correo = :correo";
+        $sql = "SELECT nombre, correo, contraseña FROM registro WHERE correo = :correo LIMIT 1";
         $stmt = $pdo->prepare($sql);
         $stmt->bindParam(":correo", $correo);
         $stmt->execute();
@@ -24,31 +18,28 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             $usuario = $stmt->fetch();
             
             // Verificar contraseña
-            if (password_verify($contrasena, $usuario['contrasena'])) {
+            if (password_verify($contraseña, $usuario['contraseña'])) {
                 // Iniciar sesión
                 $_SESSION["loggedin"] = true;
-                $_SESSION["id"] = $usuario["id"];
-                $_SESSION["nombre"] = $usuario["nombre"];
                 $_SESSION["correo"] = $usuario["correo"];
+                $_SESSION["nombre"] = $usuario["nombre"];
                 
                 header("Location: perfil.php");
                 exit();
             }
         }
         
-        // Si llega aquí, las credenciales son incorrectas
+        // Credenciales incorrectas
         header("Location: login.html?error=credenciales");
         exit();
         
     } catch (PDOException $e) {
-        // Error de base de datos
         error_log("Error en login: " . $e->getMessage());
         header("Location: login.html?error=db");
         exit();
     }
 }
 
-// Si no es POST, redirigir
 header("Location: login.html");
 exit();
 ?>

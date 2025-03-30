@@ -1,7 +1,7 @@
 <?php
 // Configuración de la base de datos
-define('DB_SERVER', 'srv573.hstgr.io'); // o '156.67.76.8'
-define('DB_USERNAME', 'Pablo');    // Reemplaza con tu usuario
+define('DB_SERVER', '156.67.76.8'); // o '156.67.76.8'
+define('DB_USERNAME', 'u241854858_Pablo');    // Reemplaza con tu usuario
 define('DB_PASSWORD', '+2nUQKA9y$3'); // Reemplaza con tu contraseña
 define('DB_NAME', 'u241854858_pruebaPablo'); // Reemplaza con el nombre de tu BD
 
