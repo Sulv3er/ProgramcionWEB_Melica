@@ -1,9 +1,9 @@
 <?php
-// Configuración de la base de datos
-define('DB_SERVER', '156.67.76.8'); // o '156.67.76.8'
-define('DB_USERNAME', 'u241854858_Pablo');    // Reemplaza con tu usuario
-define('DB_PASSWORD', '+2nUQKA9y$3'); // Reemplaza con tu contraseña
-define('DB_NAME', 'u241854858_pruebaPablo'); // Reemplaza con el nombre de tu BD
+// Configuración de la base de datos para localhost
+define('DB_SERVER', 'localhost'); // o '127.0.0.1'
+define('DB_USERNAME', 'root');    // Usuario común en entornos locales
+define('DB_PASSWORD', '');        // Contraseña vacía por defecto en muchos XAMPP/WAMP
+define('DB_NAME', 'pruebaPablo'); // Nombre de tu base de datos local
 
 // Intentar conexión
 try {
