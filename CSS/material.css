@@ -41,9 +41,11 @@ header {
     list-style: none;
     flex-grow: 1;
     align-items: center;
+    margin: 0;
+    padding: 0;
 }
 
-.nav-links li:not(:last-child):not(.right-items) {
+.nav-links > li:not(:last-child):not(.right-items) {
     margin-right: 1.5rem;
 }
 
@@ -52,14 +54,14 @@ header {
     display: flex;
     gap: 1rem;
     align-items: center;
+    list-style: none;
 }
 
-.nav-links a {
-    color: white;
-    text-decoration: none;
-    transition: color 0.3s;
-    padding: 0.5rem 0;
+.nav-links .right-items a {
+    display: flex;
+    align-items: center;
 }
+
 
 .nav-links a:hover {
     color: #2ecc71;
