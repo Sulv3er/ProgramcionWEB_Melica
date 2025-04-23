@@ -23,7 +23,7 @@
                     </div>
                 </li>     
                 <li><a href="ejemplos.html">Ejemplos</a></li>
-                <li><a href="perfil.html"><i class="fas fa-user user-icon"></i></a></li>
+                <li id="user-profile-link"><a href="perfil.html"><i class="fas fa-user user-icon"></i></a></li>
             </ul>
         </nav>
     </header>
@@ -31,16 +31,18 @@
         <div class="profile-container">
             <div class="profile-header">
                 <img src="https://via.placeholder.com/120" alt="Foto de perfil" class="profile-pic">
-                <h1>Mi Perfil</h1>
+                <h1 id="profile-title">Mi Perfil</h1>
             </div>
             <div class="profile-info">
-                <div><strong>Nombre:</strong> Juan Pérez</div>
-                <div><strong>Email:</strong> juan@example.com</div>
-                <div><strong>Miembro desde:</strong> Enero 2023</div>
-                <div><strong>Actividad reciente:</strong> 5 publicaciones este mes</div>
+                <div><strong>Nombre:</strong> <span id="profile-name"></span></div>
+                <div><strong>Email:</strong> <span id="profile-email"></span></div>
+                <div><strong>Miembro desde:</strong> <span id="profile-date"></span></div>
+                <div><strong>Actividad reciente:</strong> <span id="profile-activity"></span></div>
             </div>
-            <button>Editar Perfil</button>
+            <button id="logout-btn">Cerrar Sesión</button>
+            <button id="logout-btn">Editar perfil</button>
         </div>
     </main>
+    <script src="../JS/auth.js"></script>
 </body>
 </html>

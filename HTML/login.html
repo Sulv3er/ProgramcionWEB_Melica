@@ -36,9 +36,9 @@
                 <h2>Iniciar Sesión</h2>
                 
                 <!-- Mostrar mensajes de error -->
-                <?php if (isset($_GET['error'])): ?>
+           
                 <div class="error-message">
-                <form action="../PHP/login.php" method="POST">
+                    <form id="login-form" method="POST" action="../PHP/login.php">
                     <div class="form-group">
                         <label for="email">Correo electrónico</label>
                         <input type="email" id="email" name="email" required>
@@ -62,5 +62,6 @@
             <p>&copy; 2023 CodeSprout. Todos los derechos reservados.</p>
         </div>
     </footer>
+    <script src="../JS/auth.js"></script>
 </body>
 </html>
