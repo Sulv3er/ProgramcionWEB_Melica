@@ -112,6 +112,7 @@ main {
 
 .welcome-content .subtitle {
     font-size: 1.2rem;
+    text-align: justify;
     font-weight: bold;
     margin-bottom: 1.5rem;
     color: #3498db;
@@ -119,6 +120,7 @@ main {
 
 .welcome-content p {
     margin-bottom: 1rem;
+    text-align: justify;
 }
 
 .image-placeholder {
@@ -127,6 +129,7 @@ main {
 
 .second-section {
     display: flex;
+    text-align: justify;
     gap: 2rem;
     margin-top: 2rem;
     align-items: center;
