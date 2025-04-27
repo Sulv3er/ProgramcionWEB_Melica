@@ -1,3 +1,6 @@
+<?php 
+include_once ('header.php');
+?>
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -9,29 +12,6 @@
     <link rel="stylesheet" href="../CSS/index.css">
 </head>
 <body>
-    <header>
-        <nav class="navbar">
-            <div class="logo">CodeSprout</div>
-            <ul class="nav-links">
-                <li><a href="index.html">Inicio</a></li>
-                <li><a href="material.html">Material</a></li>
-                <li class="dropdown">
-                    <a href="comunidad.html" class="dropbtn">Comunidad</a>
-                    <div class="dropdown-content">
-                        <a href="comunidad2.html">Comunidad 2</a>
-                    </div>
-                </li>
-                <li><a href="ejemplos.html">Ejemplos</a></li>
-                <div class="auth-section">
-                    <ul class="auth-list">
-                        <li><a href="login.html" class="login-btn">Iniciar sesión</a></li>
-                        <li><a href="registro.html" class="register-btn">Registro</a></li>
-                        <li><a href="perfil.html"><i class="fas fa-user user-icon"></i></a></li>
-                    </ul>
-                </div>
-            </ul>
-        </nav>
-    </header>
     <main>
         <h1>Comunidad</h1>
         <div class="forum-container">

@@ -12,7 +12,7 @@ function updateAuthSection() {
         authSection.innerHTML = `
             <ul class="auth-list">
                 <li><span class="welcome-msg">Bienvenido(a), ${user.name.split(' ')[0]}</span></li>
-                <li><a href="perfil.html"><i class="fas fa-user user-icon"></i></a></li>
+                <li><a href="perfil.php"><i class="fas fa-user user-icon"></i></a></li>
             </ul>
         `;
         
@@ -22,9 +22,9 @@ function updateAuthSection() {
         // Usuario no logueado - Mostrar botones normales
         authSection.innerHTML = `
             <ul class="auth-list">
-                <li><a href="login.html" class="login-btn">Iniciar sesión</a></li>
-                <li><a href="registro.html" class="register-btn">Registro</a></li>
-                <li><a href="perfil.html"><i class="fas fa-user user-icon"></i></a></li>
+                <li><a href="login.php" class="login-btn">Iniciar sesión</a></li>
+                <li><a href="registro.php" class="register-btn">Registro</a></li>
+                <li><a href="perfil.php"><i class="fas fa-user user-icon"></i></a></li>
             </ul>
         `;
     }
@@ -35,7 +35,7 @@ function loadProfileData() {
     const user = JSON.parse(localStorage.getItem('currentUser'));
     
     if (!user) {
-        window.location.href = 'login.html';
+        window.location.href = 'login.php';
         return;
     }
 
@@ -152,7 +152,7 @@ function setupRegisterForm() {
                 // Actualizar UI y redirigir
                 updateAuthSection();
                 setTimeout(() => {
-                    window.location.href = 'perfil.html';
+                    window.location.href = 'perfil.php';
                 }, 1500);
             } else {
                 errorElement.textContent = result.message;
@@ -179,7 +179,7 @@ function setupLoginForm() {
             if (result.success) {
                 // Actualizar UI y redirigir
                 updateAuthSection();
-                window.location.href = 'perfil.html';
+                window.location.href = 'perfil.php';
             } else {
                 errorElement.textContent = result.message;
                 errorElement.style.display = 'block';
@@ -198,7 +198,7 @@ document.addEventListener('DOMContentLoaded', function() {
     updateAuthSection();
     
     // Cargar datos del perfil si estamos en esa página
-    if (window.location.pathname.includes('perfil.html')) {
+    if (window.location.pathname.includes('perfil.php')) {
         loadProfileData();
     }
 });
