@@ -47,24 +47,26 @@ include_once ('header.php');
                 <div class="comments-section">
                     <h2>Súmate a la conversación</h2>
                     
-                    <div class="comment-form">
+                    <form class="comment-form" method="POST" action="../Controller/controllerHome.php">
+                        <input type="hidden" name="opcion" value="GUARDAR_COMENTARIO">
+
                         <div class="form-group">
                             <label>Correo electrónico</label>
-                            <input type="email" placeholder="Tu correo electrónico">
+                            <input type="email" name="email" placeholder="Tu correo electrónico" required>
                         </div>
                         
                         <div class="form-group checkbox-group">
                             <label for="title-check">Título del comentario</label>
-                            <input type="text" placeholder="Escribe un título">
+                            <input type="text" name="titulo_comentario" placeholder="Escribe un título" required>
                         </div>
                         
                         <div class="form-group checkbox-group">
                             <label for="comment-check">Comentario / Pregunta</label>
-                            <textarea placeholder="Escribe tu comentario o pregunta"></textarea>
+                            <textarea name="comentario" placeholder="Escribe tu comentario o pregunta" required></textarea>
                         </div>
                         
-                        <button class="submit-btn">Enviar</button>
-                    </div>
+                        <button class="submit-btn" type="submit">Enviar</button>
+                    </form>
                     
                     <div class="comments-history">
                         <h3>Historial de comentarios</h3>

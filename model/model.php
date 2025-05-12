@@ -1,15 +1,20 @@
 <?php
-$host = "localhost"; // Servidor de la base de datos
-$dbname = "pruebaPablo"; // Nombre base de datos
-$username = "root"; // Usuario de la base de datos
-$password = ""; // Contraseña del usuario
+class Model{
+    var $server = ""; //servidor
+    var $host = "localhost"; // Servidor de la base de datos
+    var $dbname = "codesprout"; // Nombre base de datos
+    var $username = "root"; // Usuario de la base de datos
+    var $password = "12345678"; // Contraseña del usuario
+    
+    var $con; // Variable de conexión
 
-try {
-    $conexion = new PDO("mysql:host=$host;dbname=$dbname;charset=utf8", $username, $password);
-    // Configurar el modo de error de PDO a excepción
-    $conexion->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-    // echo "Conexión exitosa"; 
-} catch(PDOException $e) {
-    die("Error de conexión: " . $e->getMessage());
+    function __construct(){
+        try{
+            $this->con = new mysqli($this->server, $this->username, $this->password, $this->dbname);
+            //echo "Conexion exitosa";
+        }catch(Exception $e){
+            //echo ":(";
+        }
+    }
 }
 ?>
