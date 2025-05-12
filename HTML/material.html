@@ -1,28 +1,37 @@
 <!DOCTYPE html>
+<!-- Declaración del tipo de documento: HTML5 -->
 <html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Material - CodeSprout</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-    <link rel="stylesheet" href="../CSS/material.css">
-    <link rel="stylesheet" href="../CSS/index.css">
-    <link rel="stylesheet" href="../CSS/comunidad.css">
+    <!-- Configuración básica del documento -->
+    <meta charset="UTF-8"> <!-- Codificación de caracteres -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- Diseño responsivo -->
+    <title>Material - CodeSprout</title> <!-- Título que aparece en la pestaña del navegador -->
+
+    <!-- Enlaces a hojas de estilo externas -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"> <!-- Íconos de Font Awesome -->
+    <link rel="stylesheet" href="../CSS/material.css"> <!-- Estilos específicos para la página de material -->
+    <link rel="stylesheet" href="../CSS/index.css"> <!-- Estilos generales del sitio -->
+    <link rel="stylesheet" href="../CSS/comunidad.css"> <!-- Estilos adicionales para comunidad -->
 </head>
 <body>
+    <!-- Encabezado del sitio con barra de navegación -->
     <header>
         <nav class="navbar">
-            <div class="logo">CodeSprout</div>
+            <div class="logo">CodeSprout</div> <!-- Logo de la página -->
             <ul class="nav-links">
+                <!-- Enlaces del menú principal -->
                 <li><a href="index.html">Inicio</a></li>
                 <li><a href="material.html">Material</a></li>
                 <li class="dropdown">
                     <a href="comunidad.html" class="dropbtn">Comunidad</a>
+                    <!-- Submenú desplegable -->
                     <div class="dropdown-content">
                         <a href="comunidad2.html">Comunidad 2</a>
                     </div>
                 </li>
                 <li><a href="ejemplos.html">Ejemplos</a></li>
+
+                <!-- Sección de autenticación: login, registro, perfil -->
                 <div class="auth-section">
                     <ul class="auth-list">
                         <li><a href="login.html" class="login-btn">Iniciar sesión</a></li>
@@ -33,17 +42,23 @@
             </ul>
         </nav>
     </header>
+
+    <!-- Contenido principal de la página -->
     <main>
-        <h1>Material de Estudio</h1>
-        
+        <h1>Material de Estudio</h1> <!-- Título principal -->
+
+        <!-- Sección de contenido con imagen y texto -->
         <section class="content-section">
             <div class="image-container">
+                <!-- Enlace a una lista de reproducción de YouTube -->
                 <a href="https://www.youtube.com/playlist?list=PLE8uP447fYpis_9iiaT1GrdOLmg85pAJB" class="image-link">
-                    <div class="placeholder-box"></div>
+                    <div class="placeholder-box"></div> <!-- Espacio reservado para imagen -->
                 </a>
             </div>
             <div class="text-content">
                 <h2>Módulo 1: Introducción a HTML</h2>
+
+                <!-- Lección 1 -->
                 <div class="lesson">
                     <h3>Lección 1: ¿Qué es HTML?</h3>
                     <ul>
@@ -53,6 +68,8 @@
                         <li>Ejemplos de páginas web creadas con HTML</li>
                     </ul>
                 </div>
+
+                <!-- Lección 2 -->
                 <div class="lesson">
                     <h3>Lección 2: Estructura básica de un documento HTML</h3>
                     <ul>
@@ -65,8 +82,11 @@
             </div>
         </section>
 
+        <!-- Segunda sección invertida: texto a la izquierda, imagen a la derecha -->
         <section class="content-section reverse">
             <div class="text-content">
+
+                <!-- Lección 3 -->
                 <div class="lesson">
                     <h3>Lección 3: Etiquetas de texto</h3>
                     <ul>
@@ -76,6 +96,8 @@
                         <li>Ejercicios prácticos de formato de texto</li>
                     </ul>
                 </div>
+
+                <!-- Lección 4 -->
                 <div class="lesson">
                     <h3>Lección 4: Listas e imágenes</h3>
                     <ul>
@@ -84,6 +106,8 @@
                         <li>Ejercicios prácticos de creación de listas e inserción de imágenes</li>
                     </ul>
                 </div>
+
+                <!-- Lección 5 -->
                 <div class="lesson">
                     <h3>Lección 5: Enlaces y tablas</h3>
                     <ul>
@@ -93,13 +117,17 @@
                     </ul>
                 </div>
             </div>
+
             <div class="image-container">
+                <!-- Otro enlace con espacio reservado para imagen -->
                 <a href="TU_LIGA_AQUI" class="image-link">
                     <div class="placeholder-box"></div>
                 </a>
             </div>
         </section>
     </main>
+
+    <!-- Pie de página con información de contacto -->
     <footer>
         <div class="footer-content">
             <p>Contacto: info@codesprout.com | Tel: 123-456-7890</p>
@@ -107,6 +135,8 @@
             <p>&copy; 2023 CodeSprout. Todos los derechos reservados.</p>
         </div>
     </footer>
+
+    <!-- Script para autenticación u otras funciones -->
     <script src="../JS/auth.js"></script>
 </body>
 </html>
