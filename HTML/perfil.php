@@ -1,6 +1,10 @@
+<?php 
+include_once ('header.php');
+?>
 <!DOCTYPE html>
 <html lang="es">
 <head>
+<<<<<<< HEAD:HTML/perfil.html
     <!-- Configuración básica del documento -->
     <meta charset="UTF-8"> <!-- Codificación de caracteres -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- Adaptabilidad a distintos dispositivos -->
@@ -34,6 +38,18 @@
     </header>
 
     <!-- Contenido principal de la página -->
+=======
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Perfil - CodeSprout</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="../CSS/perfil.css">
+    <link rel="stylesheet" href="../CSS/comunidad.css">
+    <link rel="stylesheet" href="../CSS/index.css">
+</head>
+
+<body>
+>>>>>>> 72ccb7253292564e510d6cfeffbcac0ba400152b:HTML/perfil.php
     <main>
         <div class="profile-container">
             <div class="profile-header">

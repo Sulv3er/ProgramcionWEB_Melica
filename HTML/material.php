@@ -1,3 +1,6 @@
+<?php 
+include_once ('header.php');
+?>
 <!DOCTYPE html>
 <!-- Declaración del tipo de documento: HTML5 -->
 <html lang="es">
@@ -14,6 +17,7 @@
     <link rel="stylesheet" href="../CSS/comunidad.css"> <!-- Estilos adicionales para comunidad -->
 </head>
 <body>
+<<<<<<< HEAD:HTML/material.html
     <!-- Encabezado del sitio con barra de navegación -->
     <header>
         <nav class="navbar">
@@ -44,6 +48,8 @@
     </header>
 
     <!-- Contenido principal de la página -->
+=======
+>>>>>>> 72ccb7253292564e510d6cfeffbcac0ba400152b:HTML/material.php
     <main>
         <h1>Material de Estudio</h1> <!-- Título principal -->
 

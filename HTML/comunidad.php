@@ -1,3 +1,6 @@
+<?php 
+include_once ('header.php');
+?>
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -16,6 +19,7 @@
     <link rel="stylesheet" href="../CSS/index.css">
 </head>
 <body>
+<<<<<<< HEAD:HTML/comunidad.html
     <!-- Encabezado con barra de navegación -->
     <header>
         <nav class="navbar">
@@ -47,6 +51,8 @@
     </header>
 
     <!-- Contenido principal de la página -->
+=======
+>>>>>>> 72ccb7253292564e510d6cfeffbcac0ba400152b:HTML/comunidad.php
     <main>
         <h1>Comunidad</h1>
 

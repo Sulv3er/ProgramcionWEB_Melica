@@ -1,3 +1,6 @@
+<?php 
+include_once ('header.php');
+?>
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -14,6 +17,7 @@
     <link rel="stylesheet" href="../CSS/comunidad2.css">
 </head>
 <body>
+<<<<<<< HEAD:HTML/comunidad2.html
     <!-- Encabezado de la página con barra de navegación -->
     <header>
         <nav class="navbar">
@@ -40,6 +44,8 @@
     </header>
 
     <!-- Contenido principal de la página -->
+=======
+>>>>>>> 72ccb7253292564e510d6cfeffbcac0ba400152b:HTML/comunidad2.php
     <main class="container">
         <!-- Encabezado de la sección de comunidad -->
         <div class="community-header">
@@ -79,26 +85,37 @@
                 <div class="comments-section">
                     <h2>Súmate a la conversación</h2>
                     
+<<<<<<< HEAD:HTML/comunidad2.html
                     <!-- Formulario para escribir y enviar comentarios -->
                     <div class="comment-form">
+=======
+                    <form class="comment-form" method="POST" action="../Controller/controllerHome.php">
+                        <input type="hidden" name="opcion" value="GUARDAR_COMENTARIO">
+
+>>>>>>> 72ccb7253292564e510d6cfeffbcac0ba400152b:HTML/comunidad2.php
                         <div class="form-group">
                             <label>Correo electrónico</label>
-                            <input type="email" placeholder="Tu correo electrónico">
+                            <input type="email" name="email" placeholder="Tu correo electrónico" required>
                         </div>
                         
                         <div class="form-group checkbox-group">
                             <label for="title-check">Título del comentario</label>
-                            <input type="text" placeholder="Escribe un título">
+                            <input type="text" name="titulo_comentario" placeholder="Escribe un título" required>
                         </div>
                         
                         <div class="form-group checkbox-group">
                             <label for="comment-check">Comentario / Pregunta</label>
-                            <textarea placeholder="Escribe tu comentario o pregunta"></textarea>
+                            <textarea name="comentario" placeholder="Escribe tu comentario o pregunta" required></textarea>
                         </div>
                         
+<<<<<<< HEAD:HTML/comunidad2.html
                         <!-- Botón para enviar el comentario -->
                         <button class="submit-btn">Enviar</button>
                     </div>
+=======
+                        <button class="submit-btn" type="submit">Enviar</button>
+                    </form>
+>>>>>>> 72ccb7253292564e510d6cfeffbcac0ba400152b:HTML/comunidad2.php
                     
                     <!-- Historial de comentarios anteriores -->
                     <div class="comments-history">

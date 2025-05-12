@@ -1,3 +1,6 @@
+<?php 
+include_once ('header.php');
+?>
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -14,8 +17,10 @@
     <!-- Hojas de estilo personalizadas -->
     <link rel="stylesheet" href="../CSS/login.css">
     <link rel="stylesheet" href="../CSS/comunidad.css">
+    <link rel="stylesheet" href="../CSS/index.css">
 </head>
 <body>
+<<<<<<< HEAD:HTML/login.html
 
     <!-- Encabezado con barra de navegación -->
     <header>
@@ -45,12 +50,20 @@
     </header>
 
     <!-- Contenido principal -->
+=======
+    
+>>>>>>> 72ccb7253292564e510d6cfeffbcac0ba400152b:HTML/login.php
     <main>
         <div class="login-container">
             <div class="login-box">
                 <h2>Iniciar Sesión</h2>
                 
+<<<<<<< HEAD:HTML/login.html
                 <!-- Aquí se podrían mostrar mensajes de error si existen -->
+=======
+                <!-- Mostrar mensajes de error -->
+        
+>>>>>>> 72ccb7253292564e510d6cfeffbcac0ba400152b:HTML/login.php
                 <div class="error-message">
                     <!-- Formulario de inicio de sesión -->
                     <form id="login-form" method="POST" action="../PHP/login.php">

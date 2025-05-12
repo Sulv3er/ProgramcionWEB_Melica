@@ -1,3 +1,6 @@
+<?php 
+include_once ('header.php');
+?>
 <!DOCTYPE html>
 <!-- Define que este documento es HTML5 -->
 <html lang="es">
@@ -14,6 +17,7 @@
     <link rel="stylesheet" href="../CSS/index.css">
 </head>
 <body>
+<<<<<<< HEAD:HTML/ejemplos.html
     <!-- Encabezado con barra de navegación -->
     <header>
         <nav class="navbar">
@@ -47,6 +51,8 @@
     </header>
 
     <!-- Contenido principal -->
+=======
+>>>>>>> 72ccb7253292564e510d6cfeffbcac0ba400152b:HTML/ejemplos.php
     <main>
         <h1>Ejemplos Prácticos</h1>
 
