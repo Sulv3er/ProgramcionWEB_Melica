@@ -20,11 +20,9 @@ include_once ('header.php');
 <body>
 
     <!-- Contenido principal de la página -->
-    <main class="container">
-        <!-- Encabezado de la sección de comunidad -->
-        <div class="community-header">
+    <main>
+        
             <h1>Comunidad</h1>
-        </div>
         
         <!-- Layout de dos columnas -->
         <div class="two-column-layout">

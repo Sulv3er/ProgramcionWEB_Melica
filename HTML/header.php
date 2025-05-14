@@ -20,4 +20,6 @@
                 </div>
             </ul>
         </nav>
-    </header>
+
+        <link rel="stylesheet" href="../CSS/header.css">
+</header>
