@@ -20,50 +20,11 @@ include_once ('header.php');
     <link rel="stylesheet" href="../CSS/index.css">
 </head>
 <body>
-<<<<<<< HEAD:HTML/login.html
-
-    <!-- Encabezado con barra de navegación -->
-    <header>
-        <nav class="navbar">
-            <div class="logo">CodeSprout</div>
-            <ul class="nav-links">
-                <!-- Enlaces de navegación -->
-                <li><a href="index.html">Inicio</a></li>
-                <li><a href="material.html">Material</a></li>
-                <li class="dropdown">
-                    <!-- Menú desplegable de Comunidad -->
-                    <a href="comunidad.html" class="dropbtn">Comunidad</a>
-                    <div class="dropdown-content">
-                        <a href="comunidad2.html">Comunidad 2</a>
-                    </div>
-                </li>     
-                <li><a href="ejemplos.html">Ejemplos</a></li>
-
-                <!-- Enlaces del lado derecho (inicio de sesión, registro, perfil) -->
-                <div class="right-items">
-                    <li><a href="login.html" class="login-btn">Iniciar sesión</a></li>
-                    <li><a href="registro.html" class="register-btn">Registro</a></li>
-                    <li><a href="perfil.html"><i class="fas fa-user user-icon"></i></a></li>
-                </div>
-            </ul>
-        </nav>
-    </header>
-
-    <!-- Contenido principal -->
-=======
-    
->>>>>>> 72ccb7253292564e510d6cfeffbcac0ba400152b:HTML/login.php
     <main>
         <div class="login-container">
             <div class="login-box">
                 <h2>Iniciar Sesión</h2>
                 
-<<<<<<< HEAD:HTML/login.html
-                <!-- Aquí se podrían mostrar mensajes de error si existen -->
-=======
-                <!-- Mostrar mensajes de error -->
-        
->>>>>>> 72ccb7253292564e510d6cfeffbcac0ba400152b:HTML/login.php
                 <div class="error-message">
                     <!-- Formulario de inicio de sesión -->
                     <form id="login-form" method="POST" action="../PHP/login.php">

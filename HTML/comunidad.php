@@ -19,40 +19,8 @@ include_once ('header.php');
     <link rel="stylesheet" href="../CSS/index.css">
 </head>
 <body>
-<<<<<<< HEAD:HTML/comunidad.html
-    <!-- Encabezado con barra de navegación -->
-    <header>
-        <nav class="navbar">
-            <div class="logo">CodeSprout</div>
-            <ul class="nav-links">
-                <!-- Enlace a la página de inicio -->
-                <li><a href="index.html">Inicio</a></li>
-                <!-- Enlace a la sección de material -->
-                <li><a href="material.html">Material</a></li>
-                <!-- Menú desplegable para comunidad -->
-                <li class="dropdown">
-                    <a href="comunidad.html" class="dropbtn">Comunidad</a>
-                    <div class="dropdown-content">
-                        <a href="comunidad2.html">Comunidad 2</a>
-                    </div>
-                </li>
-                <!-- Enlace a ejemplos -->
-                <li><a href="ejemplos.html">Ejemplos</a></li>
-                <!-- Sección de autenticación: login, registro y perfil -->
-                <div class="auth-section">
-                    <ul class="auth-list">
-                        <li><a href="login.html" class="login-btn">Iniciar sesión</a></li>
-                        <li><a href="registro.html" class="register-btn">Registro</a></li>
-                        <li><a href="perfil.html"><i class="fas fa-user user-icon"></i></a></li>
-                    </ul>
-                </div>
-            </ul>
-        </nav>
-    </header>
 
     <!-- Contenido principal de la página -->
-=======
->>>>>>> 72ccb7253292564e510d6cfeffbcac0ba400152b:HTML/comunidad.php
     <main>
         <h1>Comunidad</h1>
 

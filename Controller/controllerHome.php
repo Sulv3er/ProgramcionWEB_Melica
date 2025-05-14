@@ -19,7 +19,8 @@ include_once("../Model/model_comentarios.php");
         switch(strtoupper($_REQUEST['opcion'])){
             case 'GUARDAR_COMENTARIO':
                 $objController->guardarComentario($_REQUEST);
-                break;
+                header("Location: ../HTML/comunidad2.php");
+                exit();
             default:
                 echo "Opción no válida";
                 break;

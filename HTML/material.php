@@ -17,39 +17,7 @@ include_once ('header.php');
     <link rel="stylesheet" href="../CSS/comunidad.css"> <!-- Estilos adicionales para comunidad -->
 </head>
 <body>
-<<<<<<< HEAD:HTML/material.html
-    <!-- Encabezado del sitio con barra de navegación -->
-    <header>
-        <nav class="navbar">
-            <div class="logo">CodeSprout</div> <!-- Logo de la página -->
-            <ul class="nav-links">
-                <!-- Enlaces del menú principal -->
-                <li><a href="index.html">Inicio</a></li>
-                <li><a href="material.html">Material</a></li>
-                <li class="dropdown">
-                    <a href="comunidad.html" class="dropbtn">Comunidad</a>
-                    <!-- Submenú desplegable -->
-                    <div class="dropdown-content">
-                        <a href="comunidad2.html">Comunidad 2</a>
-                    </div>
-                </li>
-                <li><a href="ejemplos.html">Ejemplos</a></li>
-
-                <!-- Sección de autenticación: login, registro, perfil -->
-                <div class="auth-section">
-                    <ul class="auth-list">
-                        <li><a href="login.html" class="login-btn">Iniciar sesión</a></li>
-                        <li><a href="registro.html" class="register-btn">Registro</a></li>
-                        <li><a href="perfil.html"><i class="fas fa-user user-icon"></i></a></li>
-                    </ul>
-                </div>
-            </ul>
-        </nav>
-    </header>
-
     <!-- Contenido principal de la página -->
-=======
->>>>>>> 72ccb7253292564e510d6cfeffbcac0ba400152b:HTML/material.php
     <main>
         <h1>Material de Estudio</h1> <!-- Título principal -->
 

@@ -15,37 +15,11 @@ include_once ('header.php');
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <link rel="stylesheet" href="../CSS/index.css">
     <link rel="stylesheet" href="../CSS/comunidad2.css">
+    <link rel="stylesheet" href="../CSS/comunidad.css">
 </head>
 <body>
-<<<<<<< HEAD:HTML/comunidad2.html
-    <!-- Encabezado de la página con barra de navegación -->
-    <header>
-        <nav class="navbar">
-            <!-- Logo del sitio -->
-            <div class="logo">CodeSprout</div>
-            
-            <!-- Enlaces de navegación principales -->
-            <ul class="nav-links">
-                <li><a href="index.html">Inicio</a></li>
-                <li><a href="material.html">Material</a></li>
-                <li><a href="comunidad.html">Comunidad</a></li>
-                <li><a href="ejemplos.html">Ejemplos</a></li>
-                
-                <!-- Sección de autenticación (login, registro, perfil) -->
-                <div class="auth-section">
-                    <ul class="auth-list">
-                        <li><a href="login.html" class="login-btn">Iniciar sesión</a></li>
-                        <li><a href="registro.html" class="register-btn">Registro</a></li>
-                        <li><a href="perfil.html"><i class="fas fa-user user-icon"></i></a></li>
-                    </ul>
-                </div>
-            </ul>
-        </nav>
-    </header>
 
     <!-- Contenido principal de la página -->
-=======
->>>>>>> 72ccb7253292564e510d6cfeffbcac0ba400152b:HTML/comunidad2.php
     <main class="container">
         <!-- Encabezado de la sección de comunidad -->
         <div class="community-header">
@@ -85,14 +59,9 @@ include_once ('header.php');
                 <div class="comments-section">
                     <h2>Súmate a la conversación</h2>
                     
-<<<<<<< HEAD:HTML/comunidad2.html
                     <!-- Formulario para escribir y enviar comentarios -->
-                    <div class="comment-form">
-=======
                     <form class="comment-form" method="POST" action="../Controller/controllerHome.php">
                         <input type="hidden" name="opcion" value="GUARDAR_COMENTARIO">
-
->>>>>>> 72ccb7253292564e510d6cfeffbcac0ba400152b:HTML/comunidad2.php
                         <div class="form-group">
                             <label>Correo electrónico</label>
                             <input type="email" name="email" placeholder="Tu correo electrónico" required>
@@ -108,14 +77,9 @@ include_once ('header.php');
                             <textarea name="comentario" placeholder="Escribe tu comentario o pregunta" required></textarea>
                         </div>
                         
-<<<<<<< HEAD:HTML/comunidad2.html
                         <!-- Botón para enviar el comentario -->
-                        <button class="submit-btn">Enviar</button>
-                    </div>
-=======
                         <button class="submit-btn" type="submit">Enviar</button>
                     </form>
->>>>>>> 72ccb7253292564e510d6cfeffbcac0ba400152b:HTML/comunidad2.php
                     
                     <!-- Historial de comentarios anteriores -->
                     <div class="comments-history">
