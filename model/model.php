@@ -4,7 +4,7 @@ class Model{
     var $host = "localhost"; // Servidor de la base de datos
     var $dbname = "codesprout"; // Nombre base de datos
     var $username = "root"; // Usuario de la base de datos
-    var $password = "12345678"; // Contraseña del usuario
+    var $password = ""; // Contraseña del usuario
     
     var $con; // Variable de conexión
 
