@@ -22,9 +22,9 @@ function updateAuthSection() {
         // Usuario no logueado - Mostrar botones normales
         authSection.innerHTML = `
             <ul class="auth-list">
-                <li><a href="HTML/login.php" class="login-btn">Iniciar sesión</a></li>
-                <li><a href="HTML/registro.php" class="register-btn">Registro</a></li>
-                <li><a href="HTML/perfil.php"><i class="fas fa-user user-icon"></i></a></li>
+                <li><a href="../HTML/login.php" class="login-btn">Iniciar sesión</a></li>
+                <li><a href="../HTML/registro.php" class="register-btn">Registro</a></li>
+                <li><a href="../HTML/perfil.php"><i class="fas fa-user user-icon"></i></a></li>
             </ul>
         `;
     }
@@ -35,7 +35,7 @@ function loadProfileData() {
     const user = JSON.parse(localStorage.getItem('currentUser'));
     
     if (!user) {
-        window.location.href = 'HTML/login.php';
+        window.location.href = '../HTML/login.php';
         return;
     }
 
@@ -198,7 +198,7 @@ document.addEventListener('DOMContentLoaded', function() {
     updateAuthSection();
     
     // Cargar datos del perfil si estamos en esa página
-    if (window.location.pathname.includes('HTML/perfil.php')) {
+    if (window.location.pathname.includes('../HTML/perfil.php')) {
         loadProfileData();
     }
 });

@@ -21,5 +21,6 @@
             </ul>
         </nav>
 
-        <link rel="stylesheet" href="../CSS/header.css">
+    <link rel="stylesheet" href="../CSS/index.css">
+    <link rel="stylesheet" href="../CSS/header.css">
 </header>

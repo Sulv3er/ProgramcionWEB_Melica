@@ -18,5 +18,15 @@ include_once ('model.php');
                     echo "Error al guardar el comentario: " . $e->getMessage();
                 }
         }
+
+        function consultarEjemplos(){
+            $sql = "SELECT * FROM ejemplos";
+            try{
+                $registros=$this->con->query($sql);
+                return $registros;
+            }catch(Exception $e){
+                echo "Error al consultar";
+            }
+        }
     }
 ?>
