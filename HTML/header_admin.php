@@ -6,12 +6,12 @@
                 <li><a href="">Ver comentarios</a></li>
                 
                 <li class="dropdown">
-                <a href="#" class="dropbtn">CRUDs</a>
-                <div class="dropdown-content">
-                    <a href="../Controller/controllerHome.php?opcion=CRUD_EJEMPLOS">CRUD Ejemplos</a>
-                    <a href="">CRUD Temas</a>
-                    <a href="">CRUD Subtemas</a>
-                </div>
+                    <a href="#" class="dropbtn">CRUDs</a>
+                    <div class="dropdown-content">
+                        <a href="../Controller/controllerHome.php?opcion=CRUD_EJEMPLOS">CRUD Ejemplos</a>
+                        <a href="">CRUD Temas</a>
+                        <a href="">CRUD Subtemas</a>
+                    </div>
                 </li>
                 
                 <div class="auth-section">
@@ -25,4 +25,6 @@
 
     <link rel="stylesheet" href="../CSS/index.css">
     <link rel="stylesheet" href="../CSS/header.css">
+    <!-- Enlace a los iconos de Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 </header>

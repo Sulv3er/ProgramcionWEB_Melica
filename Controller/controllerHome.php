@@ -20,6 +20,12 @@ include_once("../Model/modelEjemplos.php");
             $this->modelComentarios->guardarComentario($REQ);
         }
         
+        function verEjemplos() {
+            $ejemplos = $this->modelEjemplos->consultarEjemplos();
+            include_once("../HTML/ejemplos.php");
+        }
+
+
         function guardarEjemplo($REQ){
             $this->modelEjemplos->guardarEjemplo($REQ);
         }
@@ -49,6 +55,9 @@ include_once("../Model/modelEjemplos.php");
                 $objController->guardarComentario($_REQUEST);
                 header("Location: ../HTML/comunidad2.php");
                 exit();
+            case 'EJEMPLOS':
+                $objController->verEjemplos();
+                break;
             case 'CRUD_EJEMPLOS':
             $objController->viewCRUD_Ejemplos();
             break;

@@ -26,7 +26,10 @@ include_once ('header.php');
             <div class="image-container">
                 <!-- Enlace a una lista de reproducción de YouTube -->
                 <a href="https://www.youtube.com/playlist?list=PLE8uP447fYpis_9iiaT1GrdOLmg85pAJB" class="image-link">
-                    <div class="placeholder-box"></div> <!-- Espacio reservado para imagen -->
+                    <!-- Espacio reservado para imagen -->
+                    <div class="placeholder-box">
+                        <img src="../Utilities/imagenes/Materiales/m2.jpg" alt="">
+                    </div>
                 </a>
             </div>
             <div class="text-content">
@@ -95,7 +98,9 @@ include_once ('header.php');
             <div class="image-container">
                 <!-- Otro enlace con espacio reservado para imagen -->
                 <a href="TU_LIGA_AQUI" class="image-link">
-                    <div class="placeholder-box"></div>
+                    <div class="placeholder-box">
+                        <img src="../Utilities/imagenes/Materiales/m1.png" alt="">
+                    </div>
                 </a>
             </div>
         </section>

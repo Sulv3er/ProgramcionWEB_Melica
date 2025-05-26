@@ -56,12 +56,21 @@ main {
     flex: 1;
 }
 
+.image-placeholder img{
+    max-width: 800px;
+    max-height: 300px;
+    margin-top: 40px;
+    margin-left: 30px;
+    object-fit: cover;
+}
+
 .second-section {
     display: flex;
     text-align: justify;
     gap: 2rem;
     margin-top: 2rem;
     align-items: center;
+    height: 24rem;
 }
 
 .second-content {
@@ -75,6 +84,14 @@ main {
 
 .second-image {
     flex: 1;
+}
+
+.second-image img {
+    max-width: 900px;
+    height: 300px;
+    border-radius: 8px;
+    object-fit: cover;
+    margin-left: 80px;
 }
 
 .placeholder-box {
