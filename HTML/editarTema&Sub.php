@@ -25,7 +25,7 @@ $subtemas = $sql_subtemas->fetchAll(PDO::FETCH_ASSOC);
 </head>
 <body>
     <h2>Editar Tema</h2>
-    <form action="procesar_edicion_tema_y_subtema.php" method="POST">
+    <form action="modelTemaSubtema.php" method="POST">
         <!-- ID oculto del tema -->
         <input type="hidden" name="id_tema" value="<?php echo $tema['id']; ?>">
 
