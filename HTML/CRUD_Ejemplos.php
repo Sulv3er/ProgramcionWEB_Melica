@@ -67,8 +67,8 @@ include_once ('header_admin.php');
                                 <td><?php echo $reg['descripcion']?></td>
                                 <td><pre><?php echo htmlspecialchars($reg['codigo']); ?></pre></td>
                                 <td><?php echo $reg['fecha_ejemplo']?></td>
-                                <td><a class="btn btn-success" href="../Controller/controllerHome.php?opcion=EDITAREJEMPLO&id=<?php echo $reg['id_ejemplo'];?>">Editar</a></td>
-                                <td><a class="btn btn-danger" href="../Controller/controllerHome.php?opcion=ELIMINAREJEMPLO&id=<?php echo $reg['id_ejemplo'];?>">Eliminar</a></td>
+                                <td><a class="btn btn-success" href="../Controller/controllerHome.php?opcion=EDITAR_EJEMPLO&id=<?php echo $reg['id_ejemplo'];?>">Editar</a></td>
+                                <td><a class="btn btn-danger" href="../Controller/controllerHome.php?opcion=ELIMINAR_EJEMPLO&id=<?php echo $reg['id_ejemplo'];?>">Eliminar</a></td>
                             </tr>
                         <?php } ?>
                     </tbody>
