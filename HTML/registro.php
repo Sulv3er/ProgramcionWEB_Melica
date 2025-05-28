@@ -56,18 +56,20 @@ include_once ('header.php');
                 <div id="success-message" class="success-message"></div>
 
                 <!-- Formulario de registro -->
-                <form id="register-form">
+                <form id="registro-form" action="../Controller/controllerHome.php" method="post">
+                    <input type="hidden" name="opcion" value='GUARDAR_REGISTRO'>
+
                     <div class="form-group">
-                        <label for="name">Nombre completo</label>
-                        <input type="text" id="name" name="name" required>
+                        <label for="nombre">Nombre completo</label>
+                        <input type="text" id="nombre" name="nombre" required>
                     </div>
                     <div class="form-group">
                         <label for="email">Correo electrónico</label>
                         <input type="email" id="email" name="email" required>
                     </div>
                     <div class="form-group">
-                        <label for="password">Contraseña</label>
-                        <input type="password" id="password" name="password" required>
+                        <label for="contraseña">Contraseña</label>
+                        <input type="password" id="contraseña" name="contraseña" required>
                         <small class="password-hint">Mínimo 8 caracteres, incluir mayúsculas y números</small>
                     </div>
                     <div class="form-group">
@@ -81,7 +83,7 @@ include_once ('header.php');
 
                 <!-- Enlace para usuarios que ya tienen cuenta -->
                 <div class="login-link">
-                    <p>¿Ya tienes cuenta? <a href="login.html">Inicia sesión</a></p>
+                    <p>¿Ya tienes cuenta? <a href="login.php">Inicia sesión</a></p>
                 </div>
             </div>
         </div>
@@ -97,6 +99,7 @@ include_once ('header.php');
     </footer>
 
     <!-- Script de autenticación (validación o manejo del formulario) -->
-    <script src="../JS/auth.js"></script>
+    <script src="../JS/autenticacion.js"></script>
+
 </body>
 </html>

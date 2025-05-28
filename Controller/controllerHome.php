@@ -2,16 +2,19 @@
 include_once("../Model/model_comentarios.php");
 include_once("../Model/modelEjemplos.php");
 include_once("../Model/modelTemaSubtema.php");
+include_once("../Model/model_usuario.php");
 
     class ControllerHome{
         var $modelComentarios;
         var $modelEjemplos;
         var $modelTemaSubtema;
+        var $modelUsuarios;
 
         function __construct(){
             $this->modelComentarios = new ModelComentarios();
             $this->modelEjemplos = new ModelEjemplos();
             $this->modelTemaSubtema = new ModelTemaSubtema();
+            $this->modelUsuarios = new ModelUsuario();
         }
 
         // Funciones a vistas
@@ -36,6 +39,12 @@ include_once("../Model/modelTemaSubtema.php");
             include_once("../HTML/VerComentario.php");
         }
 
+        // Funciones de registro
+        function guardarRegistro($REQ){
+            $this->modelUsuarios->registrarUsuario($REQ);
+            header("Location: ../HTML/login.php");
+            exit();
+        }
 
         // Funciones de comentarios
         function guardarComentario($REQ){
@@ -139,6 +148,9 @@ include_once("../Model/modelTemaSubtema.php");
     $objController = new ControllerHome();
 
         switch(strtoupper($_REQUEST['opcion'])){
+            case 'GUARDAR_REGISTRO':
+                $objController->guardarRegistro($_REQUEST);
+                break;
             case 'COMENTARIOS':
                 $objController->verComentarios();
                 break;
@@ -174,6 +186,7 @@ include_once("../Model/modelTemaSubtema.php");
             case 'GUARDAR_TEMA':
                 $objController->guardarTema($_REQUEST);
                 header("Location: controllerHome.php?opcion=CRUD_TEMAS");
+                break;
             case 'EDITAR_TEMA':
                 $objController->editarTema($_REQUEST['id']);
                 break;
@@ -189,6 +202,7 @@ include_once("../Model/modelTemaSubtema.php");
             case 'GUARDAR_SUBTEMA':
                 $objController->guardarSubtema($_REQUEST);
                 header("Location: controllerHome.php?opcion=CRUD_SUBTEMAS");
+                break;
             case 'EDITAR_SUBTEMA':
                 $objController->editarSubtema($_REQUEST['id']);
                 break;
