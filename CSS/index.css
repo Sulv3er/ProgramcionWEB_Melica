@@ -118,19 +118,4 @@ footer {
     margin: 0 auto;
 }
 
-/*Nuevo*/
-/* Estilos para la sección de autenticación */
-.auth-section {
-    margin-left: auto; /* Esto empuja todo el bloque a la derecha */
-    padding: 0 25px;
-}
 
-/* Lista de elementos de autenticación */
-.auth-list {
-    display: flex;
-    list-style: none;
-    margin: 0;
-    padding: 0;
-    align-items: center;
-    gap: 10px; /* Espacio entre elementos */
-}

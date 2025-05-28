@@ -2,7 +2,7 @@
         <nav class="navbar">
             <div class="logo">CodeSprout</div>
             <ul class="nav-links">
-                <li><a href="../index.html">Inicio</a></li>
+                <li><a href="../index.php">Inicio</a></li>
                 <li><a href="../HTML/material.php">Material</a></li>
                 <li class="dropdown">
                     <a href="../Controller/controllerHome.php?opcion=COMENTARIOS" class="dropbtn">Comunidad</a>

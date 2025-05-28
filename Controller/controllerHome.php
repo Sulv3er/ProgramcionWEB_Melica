@@ -4,6 +4,8 @@ include_once("../Model/modelEjemplos.php");
 include_once("../Model/modelTemaSubtema.php");
 include_once("../Model/model_usuario.php");
 
+session_start();
+
     class ControllerHome{
         var $modelComentarios;
         var $modelEjemplos;
@@ -45,6 +47,32 @@ include_once("../Model/model_usuario.php");
             header("Location: ../HTML/login.php");
             exit();
         }
+
+        // Funciones de login
+        function validarUsuario($REQ) {
+            $email = $REQ['email'] ?? '';
+            $contraseña = $REQ['contraseña'] ?? '';
+
+            $usuario = $this->modelUsuarios->verificarUsuario($email, $contraseña);
+
+            if ($usuario) {
+                session_start();
+                $_SESSION['usuario'] = $usuario;  // Guarda info del usuario en sesión
+                header("Location: ../index.php"); // Cambia esta ruta a la página que desees
+                exit();
+            } else {
+                session_start();
+                $_SESSION['error_login'] = "Correo o contraseña incorrectos";
+                header("Location: ../HTML/login.php");
+                exit();
+            }
+        }
+
+        function cerrar(){
+            session_destroy();
+            header('Location: ../index.html');
+        }
+
 
         // Funciones de comentarios
         function guardarComentario($REQ){
@@ -151,6 +179,9 @@ include_once("../Model/model_usuario.php");
             case 'GUARDAR_REGISTRO':
                 $objController->guardarRegistro($_REQUEST);
                 break;
+            case 'VALIDAR_USUARIO':
+                $objController->validarUsuario($_REQUEST);
+                break;
             case 'COMENTARIOS':
                 $objController->verComentarios();
                 break;
@@ -217,6 +248,9 @@ include_once("../Model/model_usuario.php");
                 break;
             case 'ELIMINAR_COMENTARIO':
                 $objController->eliminarComentario($_REQUEST['id']);
+                break;
+            Case 'CERRAR_SESION':
+                $objController->cerrar();
                 break;
             default:
                 echo "Opción no válida";

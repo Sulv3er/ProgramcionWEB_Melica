@@ -1,5 +1,12 @@
 <?php 
 include_once ('header.php');
+session_start();
+
+// Mostrar mensaje de error si existe
+if (isset($_SESSION['error_login'])) {
+    $error_message = $_SESSION['error_login'];
+    unset($_SESSION['error_login']); // Limpiar para no mostrarlo de nuevo
+}
 ?>
 <!DOCTYPE html>
 <html lang="es">
@@ -26,15 +33,23 @@ include_once ('header.php');
                 <h2>Iniciar Sesión</h2>
                 
                 <div class="error-message">
+                    <?php if (!empty($error_message)): ?>
+                    <div class="error-message" style="color:red;">
+                    <?php echo htmlspecialchars($error_message); ?>
+                    </div>
+                    <?php endif; ?>
+
                     <!-- Formulario de inicio de sesión -->
-                    <form id="login-form" method="POST" action="../PHP/login.php">
+                    <form id="login-form" method="POST" action="../Controller/controllerHome.php">
+                        <input type="hidden" name="opcion" value='VALIDAR_USUARIO'>
+
                         <div class="form-group">
                             <label for="email">Correo electrónico</label>
                             <input type="email" id="email" name="email" required>
                         </div>
                         <div class="form-group">
-                            <label for="password">Contraseña</label>
-                            <input type="password" id="password" name="password" required>
+                            <label for="contraseña">Contraseña</label>
+                            <input type="password" id="contraseña" name="contraseña" required>
                         </div>
                         <button type="submit" class="login-button">Ingresar</button>
                     </form>
@@ -58,6 +73,6 @@ include_once ('header.php');
     </footer>
 
     <!-- Script para autenticación u otras funciones relacionadas -->
-    <script src="../JS/auth.js"></script>
+    <script src="../JS/autenticacion.js"></script>
 </body>
 </html>

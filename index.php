@@ -1,3 +1,6 @@
+<?php
+session_start();
+?>
 <!DOCTYPE html>
 <!-- Define el tipo de documento como HTML5 -->
 <html lang="es">
@@ -14,8 +17,8 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     
     <!-- Enlaces a archivos CSS personalizados -->
-    <link rel="stylesheet" href="../CSS/index.css">
-    <link rel="stylesheet" href="../CSS/comunidad.css">
+    <link rel="stylesheet" href="CSS/index.css">
+    <link rel="stylesheet" href="CSS/comunidad.css">
     <link rel="stylesheet" href="CSS/index.css">
     <link rel="stylesheet" href="CSS/comunidad.css">
     <link rel="stylesheet" href="CSS/header.css">
@@ -30,27 +33,30 @@
 
             <!-- Menú de navegación -->
             <ul class="nav-links">
-                <li><a href="index.html">Inicio</a></li>
+                <li><a href="index.php">Inicio</a></li>
                 <li><a href="HTML/material.php">Material</a></li>
-                
-                <!-- Menú desplegable para Comunidad -->
-                <li class="dropdown">
-                    <a href="Controller/controllerHome.php?opcion=COMENTARIOS" class="dropbtn">Comunidad</a>
-                    <div class="dropdown-content">
-                        <a href="Controller/controllerHome.php?opcion=COMUNIDAD2">Comunidad 2</a>
-                    </div>
-                </li>
-                <li><a href="Controller/controllerHome.php?opcion=EJEMPLOS">Ejemplos</a></li>
 
-                <!-- Sección de autenticación (inicio de sesión, registro, perfil) -->
-                <div class="auth-section">
-                    <ul class="auth-list">
+                <?php if (isset($_SESSION['usuario'])): ?>
+                    <li><a href="Controller/controllerHome.php?opcion=COMUNIDAD2">Comunidad</a></li>
+                <?php else: ?>
+                    <li><a href="Controller/controllerHome.php?opcion=COMENTARIOS">Comunidad</a></li>
+                <?php endif; ?>
+
+                <li><a href="Controller/controllerHome.php?opcion=EJEMPLOS">Ejemplos</a></li>
+            </ul>
+
+            <!-- Autenticacion -->
+            <div class="auth-section nav-links2">
+                <ul class="auth-list">
+                    <?php if (!isset($_SESSION['usuario'])): ?>
                         <li><a href="HTML/login.php" class="login-btn">Iniciar sesión</a></li>
                         <li><a href="HTML/registro.php" class="register-btn">Registro</a></li>
+                    <?php else: ?>
                         <li><a href="HTML/perfil.php"><i class="fas fa-user user-icon"></i></a></li>
-                    </ul>
-                </div>
-            </ul>
+                        <li><a href="Controller/controllerHome.php?opcion=CERRAR_SESION" class="logout-btn">Cerrar sesión</a></li>
+                    <?php endif; ?>
+                </ul>
+            </div>
         </nav>
     </header>
 
@@ -95,6 +101,6 @@
     </footer>
 
     <!-- Enlace al archivo JavaScript de autenticación -->
-    <script src="../JS/auth.js"></script>
+    <script src="JS/autenticacion.js"></script>
 </body>
 </html>

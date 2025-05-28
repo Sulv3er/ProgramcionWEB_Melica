@@ -7,11 +7,13 @@ header {
 .navbar {
     display: flex;
     justify-content: space-between;
-    align-items: left;
+    align-items: center;
     max-width: 1200px;
     margin: 0 auto;
     width: 100%;
 }
+
+
 
 .logo {
     font-weight: bold;
@@ -49,6 +51,27 @@ header {
     color: #2ecc71;
 }
 
+
+/* Estilos para la sección de autenticación */
+.auth-section {
+    display: flex;
+    align-items: center;
+}
+
+.auth-list {
+    display: flex;
+    list-style: none;
+    padding: 0;
+    gap: 20px;
+}
+
+.nav-links2 a {
+    color: white;
+    text-decoration: none;
+    transition: color 0.3s;
+    padding: 0.5rem 0;
+}
+
 .login-btn {
     color: white !important;
     padding: 0.5rem 0 !important;
@@ -67,6 +90,7 @@ header {
 .user-icon:hover {
     color: #2ecc71;
 }
+
 
 @media (max-width: 768px) {
     .navbar {
