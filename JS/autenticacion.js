@@ -1,5 +1,4 @@
 document.addEventListener('DOMContentLoaded', function () {
-
     // Validación del formulario de registro
     const registroForm = document.getElementById('registro-form');
     const errorDiv = document.getElementById('error-message');

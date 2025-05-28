@@ -36,5 +36,24 @@ class ModelUsuario{
         }
         return false; // No válido
     }
+
+
+    // --------------------------------- OBTENER DATOS DE USUARIO ---------------------------------
+    //Método para obtener los datos de un ejemplo especifico
+        function consultarUsuario($id){
+            $sql = "SELECT * FROM usuarios WHERE id_usuario=".$id;
+            try{
+                $resultado = $this->con->query($sql);
+                if ($resultado && $resultado->num_rows > 0) {
+                    $registro = $resultado->fetch_assoc();
+                    return $registro;
+                } else {
+                    return null;
+                }
+            }catch(Exception $e){
+                echo "Error al obtener los datos del usuario";
+                return null;
+            }
+        }
 }
 ?>

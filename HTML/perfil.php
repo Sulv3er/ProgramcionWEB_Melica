@@ -28,7 +28,6 @@ include_once ('header.php');
                 <div><strong>Nombre:</strong> <span id="profile-name"></span></div>
                 <div><strong>Email:</strong> <span id="profile-email"></span></div>
                 <div><strong>Miembro desde:</strong> <span id="profile-date"></span></div>
-                <div><strong>Actividad reciente:</strong> <span id="profile-activity"></span></div>
             </div>
 
             <!-- Botones para cerrar sesión y editar perfil -->
