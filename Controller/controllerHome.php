@@ -19,12 +19,21 @@ include_once("../Model/modelEjemplos.php");
         function guardarComentario($REQ){
             $this->modelComentarios->guardarComentario($REQ);
         }
-        
+
+        function verComentarios() {
+            $comentarios = $this->modelComentarios->consultarComentarios();
+            include_once("../HTML/comunidad.php");
+        }
+
+        function verComentarios2() {
+            $comentarios = $this->modelComentarios->consultarComentarios();
+            include_once("../HTML/comunidad2.php");
+        }
+
         function verEjemplos() {
             $ejemplos = $this->modelEjemplos->consultarEjemplos();
             include_once("../HTML/ejemplos.php");
         }
-
 
         function guardarEjemplo($REQ){
             $this->modelEjemplos->guardarEjemplo($REQ);
@@ -51,9 +60,16 @@ include_once("../Model/modelEjemplos.php");
     $objController = new ControllerHome();
 
         switch(strtoupper($_REQUEST['opcion'])){
+            case 'COMENTARIOS':
+                $objController->verComentarios();
+                break;
+            case 'COMUNIDAD2':
+                $objController->verComentarios2();
+                break;
+                
             case 'GUARDAR_COMENTARIO':
                 $objController->guardarComentario($_REQUEST);
-                header("Location: ../HTML/comunidad2.php");
+                header("Location: controllerHome.php?opcion=COMUNIDAD2");
                 exit();
             case 'EJEMPLOS':
                 $objController->verEjemplos();

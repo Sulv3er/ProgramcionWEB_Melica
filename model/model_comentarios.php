@@ -18,5 +18,16 @@ include_once ('model.php');
                     echo "Error al guardar el comentario: " . $e->getMessage();
                 }
         }
+
+        // Método para consultar todos los comentarios guardados
+        function consultarComentarios(){
+            $sql = "SELECT * FROM comentarios";
+            try{
+                $registros=$this->con->query($sql);
+                return $registros;
+            }catch(Exception $e){
+                echo "Error al consultar los comentarios" . $e->getMessage();
+            }
+        }
     }
 ?>

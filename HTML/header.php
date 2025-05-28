@@ -5,9 +5,9 @@
                 <li><a href="../index.html">Inicio</a></li>
                 <li><a href="../HTML/material.php">Material</a></li>
                 <li class="dropdown">
-                    <a href="../HTML/comunidad.php" class="dropbtn">Comunidad</a>
+                    <a href="../Controller/controllerHome.php?opcion=COMENTARIOS" class="dropbtn">Comunidad</a>
                     <div class="dropdown-content">
-                        <a href="../HTML/comunidad2.php">Comunidad 2</a>
+                        <a href="../Controller/controllerHome.php?opcion=COMUNIDAD2">Comunidad 2</a>
                     </div>
                 </li>
                 <li><a href="../Controller/controllerHome.php?opcion=EJEMPLOS">Ejemplos</a></li>

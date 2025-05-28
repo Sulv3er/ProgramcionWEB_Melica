@@ -29,26 +29,20 @@ include_once ('header.php');
             <!-- Columna izquierda: tarjetas de la comunidad -->
             <div class="left-column">
                 <div class="cards-container">
-                    <!-- Tarjeta 1 -->
-                    <div class="community-card">
-                        <h2>Tarjeta 1</h2>
-                        <p>Texto contenido 2</p>
-                        <p>Texto contenido</p>
-                    </div>
-                    
-                    <!-- Tarjeta 2 -->
-                    <div class="community-card">
-                        <h2>Tarjeta 1</h2>
-                        <p>Texto contenido 2</p>
-                        <p>Texto contenido</p>
-                    </div>
-                    
-                    <!-- Tarjeta 3 -->
-                    <div class="community-card">
-                        <h2>Tarjeta 1</h2>
-                        <p>Texto contenido 2</p>
-                        <p>Texto contenido</p>
-                    </div>
+                    <?php 
+                    if (isset($comentarios) && $comentarios->num_rows > 0) {
+                        while ($fila = $comentarios->fetch_assoc()) {
+                            echo '<div class="community-card">';
+                            echo '<h2>' . htmlspecialchars($fila['titulo_comentario']) . '</h2>';
+                            echo '<p><strong>Publicado por:</strong> ' . htmlspecialchars($fila['email']) . '</p>';
+                            echo '<p>' . nl2br(htmlspecialchars($fila['comentario'])) . '</p>';
+                            echo '</div>';
+                        }
+                    } else {
+                        echo '<p>No hay comentarios aún.</p>';
+                    }
+                    ?>
+
                 </div>
             </div>
         

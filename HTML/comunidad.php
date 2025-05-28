@@ -26,19 +26,21 @@ include_once ('header.php');
 
         <!-- Contenedor de publicaciones del foro -->
         <div class="forum-container">
-            <!-- Primera publicación de ejemplo -->
-            <div class="forum-post">
-                <h3>Pregunta sobre el tema X</h3>
-                <p>Publicado por: Usuario123 - Hace 2 días</p>
-                <p>¿Alguien puede explicarme cómo funciona el tema X? Tengo algunas dudas...</p>
-            </div>
-            <!-- Segunda publicación de ejemplo -->
-            <div class="forum-post">
-                <h3>Respuesta a duda común</h3>
-                <p>Publicado por: Experto2023 - Hace 1 día</p>
-                <p>Aquí está la explicación que estabas buscando sobre ese tema...</p>
-            </div>
+            <?php 
+            if ($comentarios && $comentarios->num_rows > 0) {
+                while ($fila = $comentarios->fetch_assoc()) {
+                    echo '<div class="forum-post">';
+                    echo '<h3>' . htmlspecialchars($fila['titulo_comentario']) . '</h3>';
+                    echo '<p>Publicado por: ' . htmlspecialchars($fila['email']) . '</p>';
+                    echo '<p>' . nl2br(htmlspecialchars($fila['comentario'])) . '</p>';
+                    echo '</div>';
+                }
+            } else {
+                echo '<p>No hay comentarios aún.</p>';
+            }
+            ?>
         </div>
+
     </main>
 
     <!-- Pie de página con información de contacto -->
