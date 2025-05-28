@@ -27,7 +27,7 @@ include_once ('header.php');
         <!-- Contenedor de publicaciones del foro -->
         <div class="forum-container">
             <?php 
-            if ($comentarios && $comentarios->num_rows > 0) {
+            if (isset($comentarios) && is_object($comentarios) && $comentarios->num_rows > 0) {
                 while ($fila = $comentarios->fetch_assoc()) {
                     echo '<div class="forum-post">';
                     echo '<h3>' . htmlspecialchars($fila['titulo_comentario']) . '</h3>';

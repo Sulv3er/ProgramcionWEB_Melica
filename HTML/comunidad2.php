@@ -30,7 +30,7 @@ include_once ('header.php');
             <div class="left-column">
                 <div class="cards-container">
                     <?php 
-                    if (isset($comentarios) && $comentarios->num_rows > 0) {
+                    if (isset($comentarios) && is_object($comentarios) && property_exists($comentarios, 'num_rows') && $comentarios->num_rows > 0) {
                         while ($fila = $comentarios->fetch_assoc()) {
                             echo '<div class="community-card">';
                             echo '<h2>' . htmlspecialchars($fila['titulo_comentario']) . '</h2>';
