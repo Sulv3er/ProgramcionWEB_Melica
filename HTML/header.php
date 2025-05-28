@@ -4,21 +4,25 @@
             <ul class="nav-links">
                 <li><a href="../index.php">Inicio</a></li>
                 <li><a href="../HTML/material.php">Material</a></li>
-                <li class="dropdown">
-                    <a href="../Controller/controllerHome.php?opcion=COMENTARIOS" class="dropbtn">Comunidad</a>
-                    <div class="dropdown-content">
-                        <a href="../Controller/controllerHome.php?opcion=COMUNIDAD2">Comunidad 2</a>
-                    </div>
-                </li>
+                <?php if (isset($_SESSION['usuario'])): ?>
+                    <li><a href="../Controller/controllerHome.php?opcion=COMUNIDAD2">Comunidad</a></li>
+                <?php else: ?>
+                    <li><a href="../Controller/controllerHome.php?opcion=COMENTARIOS">Comunidad</a></li>
+                <?php endif; ?>
                 <li><a href="../Controller/controllerHome.php?opcion=EJEMPLOS">Ejemplos</a></li>
-                <div class="auth-section">
-                    <ul class="auth-list">
-                        <li><a href="../HTML/login.php" class="login-btn">Iniciar sesión</a></li>
-                        <li><a href="../HTML/registro.php" class="register-btn">Registro</a></li>
-                        <li><a href="../HTML/perfil.php"><i class="fas fa-user user-icon"></i></a></li>
-                    </ul>
-                </div>
             </ul>
+
+            <div class="auth-section nav-links2">
+                <ul class="auth-list">
+                    <?php if (!isset($_SESSION['usuario'])): ?>
+                    <li><a href="../HTML/login.php" class="login-btn">Iniciar sesión</a></li>
+                    <li><a href="../HTML/registro.php" class="register-btn">Registro</a></li>
+                    <?php else: ?>
+                        <li><a href="../HTML/perfil.php"><i class="fas fa-user user-icon"></i></a></li>
+                        <li><a href="../Controller/controllerHome.php?opcion=CERRAR_SESION" class="logout-btn">Cerrar sesión</a></li>
+                    <?php endif; ?>
+                </ul>
+            </div>
         </nav>
 
     <link rel="stylesheet" href="../CSS/index.css">

@@ -69,6 +69,5 @@ include_once ('header.php');
             <p>&copy; 2023 CodeSprout. Todos los derechos reservados.</p>
         </div>
     </footer>
-    <script src="../JS/auth.js"></script>
 </body>
 </html>

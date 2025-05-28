@@ -38,6 +38,5 @@ include_once ('header.php');
     </main>
 
     <!-- Script para autenticación y manejo de sesión del usuario -->
-    <script src="../JS/auth.js"></script>
 </body>
 </html>

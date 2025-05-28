@@ -116,6 +116,5 @@ include_once ('header.php');
     </footer>
 
     <!-- Script para autenticación u otras funciones -->
-    <script src="../JS/auth.js"></script>
 </body>
 </html>

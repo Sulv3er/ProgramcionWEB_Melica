@@ -41,7 +41,6 @@ session_start();
                 <?php else: ?>
                     <li><a href="Controller/controllerHome.php?opcion=COMENTARIOS">Comunidad</a></li>
                 <?php endif; ?>
-
                 <li><a href="Controller/controllerHome.php?opcion=EJEMPLOS">Ejemplos</a></li>
             </ul>
 

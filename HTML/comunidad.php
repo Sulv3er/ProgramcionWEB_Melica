@@ -53,6 +53,5 @@ include_once ('header.php');
     </footer>
 
     <!-- Script para manejar la autenticación (iniciar sesión, cerrar sesión, etc.) -->
-    <script src="../JS/auth.js"></script>
 </body>
 </html>
