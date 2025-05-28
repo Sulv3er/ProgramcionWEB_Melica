@@ -1,21 +1,43 @@
 <?php
 include_once("../Model/model_comentarios.php");
 include_once("../Model/modelEjemplos.php");
+include_once("../Model/modelTemaSubtema.php");
 
     class ControllerHome{
         var $modelComentarios;
         var $modelEjemplos;
+        var $modelTemaSubtema;
 
         function __construct(){
             $this->modelComentarios = new ModelComentarios();
             $this->modelEjemplos = new ModelEjemplos();
+            $this->modelTemaSubtema = new ModelTemaSubtema();
         }
 
+        // Funciones a vistas
         function viewCRUD_Ejemplos(){
             $registros = $this->modelEjemplos->consultarEjemplos();
             include_once("../HTML/CRUD_Ejemplos.php");
         }
 
+        function viewCRUD_Temas(){
+            $registros = $this->modelTemaSubtema->consultarTemas();
+            include_once("../HTML/CRUD_Temas.php");
+        }
+
+        function viewCRUD_Subtemas(){
+            $temas = $this->modelTemaSubtema->consultarTemas();        
+            $registros = $this->modelTemaSubtema->consultarSubtemas();  
+            include_once("../HTML/CRUD_Subtemas.php");
+        }
+
+        function viewVerComentarios(){
+            $registros = $this->modelComentarios->consultarComentarios();
+            include_once("../HTML/VerComentario.php");
+        }
+
+
+        // Funciones de comentarios
         function guardarComentario($REQ){
             $this->modelComentarios->guardarComentario($REQ);
         }
@@ -30,6 +52,14 @@ include_once("../Model/modelEjemplos.php");
             include_once("../HTML/comunidad2.php");
         }
 
+        function eliminarComentario($id) {
+            $this->modelComentarios->eliminarComentario($id);
+            header("Location: controllerHome.php?opcion=VER_COMENTARIOS");
+            exit();
+        }
+
+
+        // Funciones de CRUD ejemplos
         function verEjemplos() {
             $ejemplos = $this->modelEjemplos->consultarEjemplos();
             include_once("../HTML/ejemplos.php");
@@ -55,6 +85,55 @@ include_once("../Model/modelEjemplos.php");
             header("Location: controllerHome.php?opcion=CRUD_EJEMPLOS");
             exit();
         }
+
+        // Funciones de CRUD Temas
+        function guardarTema($REQ){
+            $this->modelTemaSubtema->guardarTema($REQ);
+            header("Location: controllerHome.php?opcion=CRUD_TEMAS");
+            exit();
+        }
+
+        function editarTema($id){
+            $registro = $this->modelTemaSubtema->consultarTema($id);
+            include_once("../HTML/editarEjemplo.php");
+        }
+
+        function modificarTema($REQ){
+            $this->modelTemaSubtema->editarTema($REQ);
+            header("Location: controllerHome.php?opcion=CRUD_TEMAS");
+            exit();
+        }
+
+        function eliminarTema($id){
+            $this->modelTemaSubtema->eliminarTema($id);
+            header("Location: controllerHome.php?opcion=CRUD_TEMAS");
+            exit();
+        }
+
+
+        // Funciones de CRUD Subtemas
+        function guardarSubTema($REQ){
+            $this->modelTemaSubtema->guardarSubtema($REQ);
+            header("Location: controllerHome.php?opcion=CRUD_SUBTEMAS");
+            exit();
+        }
+
+        function editarSubtema($id){
+            $registro = $this->modelTemaSubtema->consultarSubtema($id);
+            include_once("../HTML/editarEjemplo.php");
+        }
+
+        function modificarSubtema($REQ){
+            $this->modelTemaSubtema->editarSubtema($REQ);
+            header("Location: controllerHome.php?opcion=CRUD_SUBTEMAS");
+            exit();
+        }
+
+        function eliminarSubtema($id){
+            $this->modelTemaSubtema->eliminarSubtema($id);
+            header("Location: controllerHome.php?opcion=CRUD_SUBTEMAS");
+            exit();
+        }
     }
 
     $objController = new ControllerHome();
@@ -66,7 +145,6 @@ include_once("../Model/modelEjemplos.php");
             case 'COMUNIDAD2':
                 $objController->verComentarios2();
                 break;
-                
             case 'GUARDAR_COMENTARIO':
                 $objController->guardarComentario($_REQUEST);
                 header("Location: controllerHome.php?opcion=COMUNIDAD2");
@@ -75,8 +153,8 @@ include_once("../Model/modelEjemplos.php");
                 $objController->verEjemplos();
                 break;
             case 'CRUD_EJEMPLOS':
-            $objController->viewCRUD_Ejemplos();
-            break;
+                $objController->viewCRUD_Ejemplos();
+                break;
             case 'GUARDAR_EJEMPLO':
                 $objController->guardarEjemplo($_REQUEST);
                 header("Location: controllerHome.php?opcion=CRUD_EJEMPLOS");
@@ -89,6 +167,42 @@ include_once("../Model/modelEjemplos.php");
                 break;
             case 'ELIMINAR_EJEMPLO':
                 $objController->eliminarEjemplo($_REQUEST['id']);
+                break;
+            case 'CRUD_TEMAS':
+                $objController->viewCRUD_Temas();
+                break;
+            case 'GUARDAR_TEMA':
+                $objController->guardarTema($_REQUEST);
+                header("Location: controllerHome.php?opcion=CRUD_TEMAS");
+            case 'EDITAR_TEMA':
+                $objController->editarTema($_REQUEST['id']);
+                break;
+            case 'MODIFICAR_TEMA':
+                $objController->modificarTema($_REQUEST);
+                break;
+            case 'ELIMINAR_TEMA':
+                $objController->eliminarTema($_REQUEST['id']);
+                break;
+            case 'CRUD_SUBTEMAS':
+                $objController->viewCRUD_Subtemas();
+                break;
+            case 'GUARDAR_SUBTEMA':
+                $objController->guardarSubtema($_REQUEST);
+                header("Location: controllerHome.php?opcion=CRUD_SUBTEMAS");
+            case 'EDITAR_SUBTEMA':
+                $objController->editarSubtema($_REQUEST['id']);
+                break;
+            case 'MODIFICAR_SUBTEMA':
+                $objController->modificarSubtema($_REQUEST);
+                break;
+            case 'ELIMINAR_SUBTEMA':
+                $objController->eliminarSubtema($_REQUEST['id']);
+                break;
+            case 'VER_COMENTARIOS':
+                $objController->viewVerComentarios();
+                break;
+            case 'ELIMINAR_COMENTARIO':
+                $objController->eliminarComentario($_REQUEST['id']);
                 break;
             default:
                 echo "Opción no válida";

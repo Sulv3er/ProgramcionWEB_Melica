@@ -3,14 +3,14 @@
             <div class="logo">CodeSprout</div>
             <div class="nav-links">
                 <li><a href="../index.html">Inicio</a></li>
-                <li><a href="">Ver comentarios</a></li>
+                <li><a href="../Controller/controllerHome.php?opcion=VER_COMENTARIOS">Ver comentarios</a></li>
                 
                 <li class="dropdown">
                     <a href="#" class="dropbtn">CRUDs</a>
                     <div class="dropdown-content">
                         <a href="../Controller/controllerHome.php?opcion=CRUD_EJEMPLOS">CRUD Ejemplos</a>
-                        <a href="">CRUD Temas</a>
-                        <a href="">CRUD Subtemas</a>
+                        <a href="../Controller/controllerHome.php?opcion=CRUD_TEMAS">CRUD Temas</a>
+                        <a href="../Controller/controllerHome.php?opcion=CRUD_SUBTEMAS">CRUD Subtemas</a>
                     </div>
                 </li>
                 

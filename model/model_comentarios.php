@@ -29,5 +29,17 @@ include_once ('model.php');
                 echo "Error al consultar los comentarios" . $e->getMessage();
             }
         }
+
+        // Método para eliminar un comentario
+        function eliminarComentario($id){
+            $sql = "DELETE FROM comentarios WHERE id_comentario=".$id;
+            try{
+                $this->con->query($sql);
+                return true;
+            } catch(Exception $e){
+                echo 'Error al eliminar el comentario: ' . $e->getMessage();
+                return false;
+            }
+        }
     }
 ?>
