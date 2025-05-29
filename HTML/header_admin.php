@@ -1,10 +1,9 @@
 <header>
-        <nav class="navbar">
+        <nav class="navbar2">
             <div class="logo">CodeSprout</div>
-            <div class="nav-links">
-                <li><a href="../index.html">Inicio</a></li>
+            <ul class="nav-links">
+                <li><a href="../index.php">Inicio</a></li>
                 <li><a href="../Controller/controllerHome.php?opcion=VER_COMENTARIOS">Ver comentarios</a></li>
-                
                 <li class="dropdown">
                     <a href="#" class="dropbtn">CRUDs</a>
                     <div class="dropdown-content">
@@ -13,13 +12,13 @@
                         <a href="../Controller/controllerHome.php?opcion=CRUD_SUBTEMAS">CRUD Subtemas</a>
                     </div>
                 </li>
+            </ul>
                 
-                <div class="auth-section nav-links2">
-                    <ul class="auth-list">
-                        <li><a href="login.php" class="login-btn">Cerrar sesión</a></li>
-                        <li><a href="perfil.php"><i class="fas fa-user user-icon"></i></a></li>
-                    </ul>
-                </div>
+            <div class="auth-section nav-links2">
+                <ul class="auth-list">
+                    <li><a href="login.php" class="login-btn">Cerrar sesión</a></li>
+                    <li><a href="perfil.php"><i class="fas fa-user user-icon"></i></a></li>
+                </ul>
             </div>
         </nav>
 
