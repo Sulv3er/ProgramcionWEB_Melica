@@ -1,5 +1,5 @@
 document.addEventListener('DOMContentLoaded', function () {
-    // Validación del formulario de registro
+    // -------------------- Validación del registro --------------------
     const registroForm = document.getElementById('registro-form');
     const errorDiv = document.getElementById('error-message');
 
@@ -8,7 +8,6 @@ document.addEventListener('DOMContentLoaded', function () {
             const password = document.getElementById('contraseña').value;
             const confirmPassword = document.getElementById('confirm-password').value;
 
-            // Regex para validar: mínimo 8 caracteres, al menos 1 mayúscula y 1 número
             const regex = /^(?=.*[A-Z])(?=.*\d).{8,}$/;
 
             if (password !== confirmPassword) {
@@ -30,4 +29,29 @@ document.addEventListener('DOMContentLoaded', function () {
         });
     }
 
+    // -------------------- Validación del login --------------------
+    const loginForm = document.getElementById('login-form');
+
+    if (loginForm) {
+        loginForm.addEventListener('submit', function (e) {
+            const email = document.getElementById('email').value.trim();
+            const password = document.getElementById('contraseña').value;
+
+            if (!email || !password) {
+                e.preventDefault();
+                alert("Por favor, completa todos los campos.");
+                return false;
+            }
+
+            // Validar formato de correo (simple)
+            const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            if (!emailRegex.test(email)) {
+                e.preventDefault();
+                alert("Ingresa un correo electrónico válido.");
+                return false;
+            }
+
+            return true;
+        });
+    }
 });

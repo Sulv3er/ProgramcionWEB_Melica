@@ -16,8 +16,8 @@
                 
             <div class="auth-section nav-links2">
                 <ul class="auth-list">
-                    <li><a href="login.php" class="login-btn">Cerrar sesión</a></li>
-                    <li><a href="perfil.php"><i class="fas fa-user user-icon"></i></a></li>
+                    <li><a href="../Controller/controllerHome.php?opcion=CERRAR_SESION" class="logout-btn">Cerrar sesión</a></li>
+                    <li><a href="../HTML/perfil.php"><i class="fas fa-user user-icon"></i></a></li>
                 </ul>
             </div>
         </nav>

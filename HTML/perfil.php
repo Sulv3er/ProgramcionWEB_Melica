@@ -1,6 +1,20 @@
 <?php 
-include_once ('header.php');
+session_start();
+
+// Verificar si el usuario ha iniciado sesión
+if (!isset($_SESSION['usuario'])) {
+    header("Location: login.php"); 
+    exit();
+}
+
+// Incluir el header adecuado según si es administrador
+if (!empty($_SESSION['usuario']['es_admin']) && $_SESSION['usuario']['es_admin'] === true) {
+    include_once('header_admin.php');
+} else {
+    include_once('header.php');
+}
 ?>
+
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -20,19 +34,25 @@ include_once ('header.php');
         <div class="profile-container">
             <div class="profile-header">
                 <!-- Imagen de perfil y título -->
-                <img src="https://via.placeholder.com/120" alt="Foto de perfil" class="profile-pic">
+                <i class="fas fa-user-circle fa-7x profile-pic"></i>
                 <h1 id="profile-title">Mi Perfil</h1>
             </div>
             <div class="profile-info">
-                <!-- Información del perfil que se mostrará dinámicamente con JavaScript -->
-                <div><strong>Nombre:</strong> <span id="profile-name"></span></div>
-                <div><strong>Email:</strong> <span id="profile-email"></span></div>
-                <div><strong>Miembro desde:</strong> <span id="profile-date"></span></div>
+                <div><strong>Nombre:</strong> <span id="profile-name"><?php echo $_SESSION['usuario']['nombre'] ?? 'No disponible'; ?></span></div>
+                <div><strong>Email:</strong> <span id="profile-email"><?php echo $_SESSION['usuario']['email'] ?? 'No disponible'; ?></span></div>
+                <div><strong>Miembro desde:</strong> <span id="profile-date"><?php echo $_SESSION['usuario']['fecha_registro'] ?? 'No disponible'; ?></span></div>
             </div>
 
+
             <!-- Botones para cerrar sesión y editar perfil -->
-            <button id="logout-btn">Cerrar Sesión</button>
-            <button id="logout-btn">Editar perfil</button> <!-- Este botón tiene el mismo id, lo cual debería corregirse -->
+            <div class="profile-actions">
+                <!-- Botón Cerrar Sesión como enlace estilizado -->
+                <a href="../Controller/controllerHome.php?opcion=CERRAR_SESION" class="btn logoutP-btn">Cerrar Sesión</a>
+
+                <!-- Botón Editar Perfil como enlace estilizado -->
+                <a href="../Controller/controllerHome.php?opcion=EDITAR_USUARIO&id=<?php echo $_SESSION['usuario']['id_usuario'];  ?>" class="btn edit-btn">Editar Perfil</a>
+            </div>
+
         </div>
     </main>
 

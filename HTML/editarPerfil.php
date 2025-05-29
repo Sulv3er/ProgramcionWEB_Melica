@@ -39,24 +39,27 @@ include_once ('header.php');
                 <h2>Editar perfil</h2>
                 <div id="error-message" class="error-message"></div>
                 <div id="success-message" class="success-message"></div>
-                <form id="register-form">
+                <form id="register-form" method="POST" action="../Controller/controllerHome.php?opcion=MODIFICAR_USUARIO">
+                    <input type="hidden" name="id_usuario" value="<?php echo $registro['id_usuario'] ?? ''; ?>">
+
                     <div class="form-group">
-                        <label for="name">Nombre</label>
-                        <input type="text" id="name" name="name" required>
+                        <label for="nombre">Nombre</label>
+                        <input type="text" id="nombre" name="nombre" value="<?php echo $registro['nombre'] ?? ''; ?>" required>
                     </div>
                     <div class="form-group">
                         <label for="email">Correo electrónico</label>
-                        <input type="email" id="email" name="email" required>
+                        <input type="email" id="email" name="email" value="<?php echo $registro['email'] ?? ''; ?>" required>
                     </div>
                     <div class="form-group">
-                        <label for="password">Contraseña</label>
-                        <input type="password" id="password" name="password" required>
+                        <label for="contraseña">Contraseña</label>
+                        <input type="password" id="contraseña" name="contraseña" value="<?php echo $registro['contraseña'] ?? ''; ?>" required>
                         <small class="password-hint">Mínimo 8 caracteres, incluir mayúsculas y números</small>
                     </div>
                     <div class="form-group">
                         <label for="confirm-password">Confirmar contraseña</label>
-                        <input type="password" id="confirm-password" name="confirm-password" required>
+                        <input type="password" id="confirm-password" name="confirm-password">
                     </div>
+                    
                     <button type="submit" class="register-button">Guardar</button>
                 </form>
             </div>
@@ -69,5 +72,7 @@ include_once ('header.php');
             <p>&copy; 2023 CodeSprout. Todos los derechos reservados.</p>
         </div>
     </footer>
+    <script src="../JS/autenticacion.js"></script>
+
 </body>
 </html>

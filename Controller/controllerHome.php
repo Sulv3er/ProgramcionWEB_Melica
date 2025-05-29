@@ -56,12 +56,18 @@ session_start();
             $usuario = $this->modelUsuarios->verificarUsuario($email, $contraseña);
 
             if ($usuario) {
-                session_start();
-                $_SESSION['usuario'] = $usuario;  // Guarda info del usuario en sesión
-                header("Location: ../index.php"); // Cambia esta ruta a la página que desees
+                $_SESSION['usuario'] = $usuario;
+
+                if (!empty($usuario['es_admin']) && $usuario['es_admin']) {
+                    // Redirigir a interfaz de administrador
+                    header("Location: controllerHome.php?opcion=VER_COMENTARIOS");
+                } else {
+                    // Redirigir a inicio normal
+                    header("Location: ../index.php");
+                }
+
                 exit();
             } else {
-                session_start();
                 $_SESSION['error_login'] = "Correo o contraseña incorrectos";
                 header("Location: ../HTML/login.php");
                 exit();
@@ -71,6 +77,18 @@ session_start();
         function cerrar(){
             session_destroy();
             header('Location: ../index.php');
+        }
+
+        // Funciones de perfil
+        function editarUsuario($id){
+            $registro = $this->modelUsuarios->consultarUsuario($id);
+            include_once("../HTML/editarPerfil.php");
+        }
+
+        function modificarUsuario($REQ){
+            $this->modelUsuarios->editarUsuario($REQ);
+            header("Location: controllerHome.php?opcion=VER_COMENTARIOS");
+            exit();
         }
 
 
@@ -181,6 +199,12 @@ session_start();
                 break;
             case 'VALIDAR_USUARIO':
                 $objController->validarUsuario($_REQUEST);
+                break;
+            case 'EDITAR_USUARIO':
+                $objController->editarUsuario($_REQUEST['id']);
+                break;
+            case 'MODIFICAR_USUARIO':
+                $objController->modificarUsuario($_REQUEST);
                 break;
             case 'COMENTARIOS':
                 $objController->verComentarios();
