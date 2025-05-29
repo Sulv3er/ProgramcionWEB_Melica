@@ -1,19 +1,5 @@
 <?php
-// Supón que ya tienes la conexión a la base de datos
-include_once("conexion.php");
-
-// Obtener datos por GET
-$id_tema = $_GET['id'] ?? null;
-
-// Consultar datos del tema
-$sql_tema = $conn->prepare("SELECT * FROM temas WHERE id = ?");
-$sql_tema->execute([$id_tema]);
-$tema = $sql_tema->fetch(PDO::FETCH_ASSOC);
-
-// Consultar subtemas relacionados
-$sql_subtemas = $conn->prepare("SELECT * FROM subtemas WHERE id_tema = ?");
-$sql_subtemas->execute([$id_tema]);
-$subtemas = $sql_subtemas->fetchAll(PDO::FETCH_ASSOC);
+include_once ('header_admin.php');
 ?>
 
 <!DOCTYPE html>

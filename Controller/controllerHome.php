@@ -150,7 +150,7 @@ session_start();
 
         function editarTema($id){
             $registro = $this->modelTemaSubtema->consultarTema($id);
-            include_once("../HTML/editarEjemplo.php");
+            include_once("../HTML/editarTema.php");
         }
 
         function modificarTema($REQ){
@@ -175,7 +175,8 @@ session_start();
 
         function editarSubtema($id){
             $registro = $this->modelTemaSubtema->consultarSubtema($id);
-            include_once("../HTML/editarEjemplo.php");
+            $temas = $this->modelTemaSubtema->consultarTemas();
+            include_once("../HTML/editarSubtema.php");
         }
 
         function modificarSubtema($REQ){
