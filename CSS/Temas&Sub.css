@@ -3,12 +3,12 @@ body {
     font-family: 'Segoe UI', sans-serif;
     background-color: #f4f6f9;
     margin: 0px;
-    padding: 0px;
+    padding: 0px !important;
     color: #333;
 }
 
 /* Título principal */
-h2, h3 {
+h1, h2, h3 {
     text-align: center;
     color: #2c3e50;
 }
@@ -81,7 +81,7 @@ legend {
 /* Responsividad */
 @media screen and (max-width: 600px) {
     form {
-        padding: 20px;
+        padding: 0px;
     }
 
     input, textarea, select {
